@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Guard Feed</string>
+    <string name="list_is_empty">Items is not found</string>
+</resources>

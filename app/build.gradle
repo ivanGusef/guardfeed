@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.guardfeed.app"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+}
